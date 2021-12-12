@@ -12,8 +12,7 @@
     <div class="left">
         <img src="https://i.imgur.com/cMy8V5j.png" 
         alt="user" width="100">
-        
-        <h4>Jake Hudson</h4>
+        <h4>Nana Yaw</h4>
         
     </div>
     <div class="right">
@@ -22,7 +21,7 @@
             <div class="info_data">
                  <div class="data">
                     <h4>Name</h4>
-                    <p>Jake Hudson</p>
+                    <p>Nana Yaw</p>
                  </div>
 
 
@@ -36,7 +35,7 @@
                     <div class="info_data">
                         <div class="data">
                            <h4>Email</h4>
-                           <p>jakehudson@gmail.com</p>
+                           <p>nanayawobiriyeboah@outlook.com</p>
                         </div>
 
 
@@ -57,5 +56,83 @@
     </div>
 </div>
 
+</body>
+</html>
+
+<?php
+session_start();
+require("database-connection.php");
+$userID = $_GET['id'];
+$sql = "SELECT *  FROM Register where ProfileID = '$userID'";
+$result3 = mysqli_query($connect,$sql);
+
+if (mysqli_num_rows($result3) > 0){
+    // output data of each row
+    while($row = mysqli_fetch_array($result3)) {
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS User Profile Card</title>
+	<link rel="stylesheet" href="style 2.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <script src="https://use.fontawesome.com/7f04330ce9.js"></script>
+
+
+<body>
+<div class="wrapper">
+    <div class="left">
+        <img src="huston-wilson-g7oN-4RMV_M-unsplash.jpg" alt="Avatar" width="100">
+        <h4> <?php echo $row["Username"]; ?> </h4>
+         <p><?php echo $row["profession"]; ?> </p>
+         <button class="tab" type="button">
+          <div class="botton"> Message </div>
+        </button>
+    </div>
+    <div class="right">
+        <div class="info">
+          <h3><?php echo $row["Username"]; ?> <a href="deleteUser.php?id=<?php echo $_SESSION["ProfileID"];?>"><i class="fa fa-trash" style="color:darkred; float:right;"></i></a></h3>
+    
+          <div class="info_data">
+            <div class="data">
+               <h>Age</h3>
+               <p><?php echo $row["age"]; ?> </p>
+
+               <h>Gender</h3>
+               <p><?php echo $row["gender"]; ?> </p>
+            </div>
+            
+          <button class="wpO6b  " type="button"><div class="QBdPU ">
+            <svg aria-label="Options" class="_8-yf5 " color="#262626" fill="#262626" height="32" role="img" viewBox="0 0 24 24" width="32">
+              <circle cx="12" cy="12" r="1.5"></circle>
+              <circle cx="6.5" cy="12" r="1.5"></circle>
+              <circle cx="17.5" cy="12" r="1.5"></circle>
+            </svg></div></button>
+                 
+                
+            </div>
+        </div>
+      
+      <div class="bio">
+            <h>Bio </h3>
+            <div class="projects_data">
+                 <div class="data">
+                    <p><?php echo $row["bio"]; }} ?></p>
+                 </div>
+            
+            </div>
+        </div>
+      
+        <div class="social_media">
+            <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+      </div>
+    </div>
+</div>
 </body>
 </html>

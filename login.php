@@ -11,7 +11,7 @@
 	<section class="login">
 		<div class="login_box">
 			<div class="left">
-				<div class="top_link"><a href="file:///Applications/XAMPP/xamppfiles/htdocs/bizpage-master%20copy/index.html">
+				<div class="top_link"><a href="register.php">
                     <img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
 				<div class="contact">
 					<form  method="post" action="register_action.php">

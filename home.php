@@ -10,6 +10,10 @@
   	unset($_SESSION['email']);
   	header("location: login.php");
   }
+
+  if(isset($_SESSION['userID'])){
+     $p_id = $_SESSION['userID'];
+  }
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +69,7 @@
                             </ul>
                         </nav>
                         <div class="header__menu__right">
-                            <a href="profile.php" class="login-btn"><i class="fa fa-user"></i></a>
+                            <a href="profile.php?id=<?=$p_id?>" class="login-btn"><i class="fa fa-user"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1350,9 +1354,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <a href="#" class="feature__location__item large-item set-bg"
-                        data-setbg="img/feature-location/fl-1.jpg">
+                        data-setbg="no1-oxford-street-accra.jpg">
                         <div class="feature__location__item__text">
-                            <h5>Washington, D.C</h5>
+                            <h5>Osu, Accra</h5>
                             <ul>
                                 <li>2045 Listings</li>
                                 <li>3648 Users</li>
